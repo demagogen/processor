@@ -11,7 +11,7 @@ int main(int argc, const char* argv[])
     if (argc == 2)
     {
         // TODO magic numbers and idiotic parsing
-        programCodeInfo.file = fopen(argv[1], "rb");
+        asm_read_file(&programCodeInfo, argc, argv);
     }
 
     return 0;

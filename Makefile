@@ -5,6 +5,11 @@ OUTFILE=asm
 
 SOURCES=main.cpp asm.cpp
 
+BOLD_GREEN = \033[1;32m
+BOLD_YELLOW = \033[1;33m
+BOLD_RED = \033[1;33m
+DEFAULT_STYLE = \033[0m
+
 CFLAGS= -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop-optimizations 				\
 		-Wc++14-compat -Wmissing-declarations -Wcast-align -Wcast-qual -Wchar-subscripts 					\
 		-Wconditionally-supported -Wconversion -Wctor-dtor-privacy -Wempty-body -Wfloat-equal 				\
@@ -32,10 +37,13 @@ $(OUTFILE): $(OBJECT_FILES)
 
 $(OBJECT_FILES): %.o: %.cpp
 	$(CC) -c $^ -o $(OBJECTS_DIR)/$@
+	@printf "$(BOLD_GREEN)$^ passed $(DEFAULT_STYLE)\n"
 
 makedir:
 	@mkdir -p $(OBJECTS_DIR)
 
 clean:
 	@rm -f $(OBJECTS_DIR)/*.o
+	@printf "$(BOLD_YELLOW)cleaned $(OBJECTS_DIR)/*.o $(DEFAULT_STYLE)\n"
 	@rm -f $(OBJECTS_DIR)/$(OUTFILE)
+	@printf "$(BOLD_YELLOW)cleaned $(OBJECTS_DIR)/$(OUTFILE) $(DEFAULT_STYLE)\n"
