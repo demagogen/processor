@@ -1,7 +1,7 @@
 CC=g++
 
 OBJECTS_DIR=build
-OUTFILE=asm
+OUTFILE=simple_asm
 
 SOURCES=main.cpp asm.cpp
 

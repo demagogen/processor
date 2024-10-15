@@ -107,7 +107,6 @@ ASM_ERROR asm_command_switch(PROGRAM_CODE* programCodeInfo, const char* command)
     {
         return STRUCT_ALLOCATION_ERROR;
     }
-    if (strcmp(command, "start") == 0) {fprintf(programCodeInfo->output_file, "%d ", _start); return NONE;}
     if (strcmp(command, "hlt"  ) == 0) {fprintf(programCodeInfo->output_file, "%d ", _hlt  ); return NONE;}
     if (strcmp(command, "out"  ) == 0) {fprintf(programCodeInfo->output_file, "%d ", _out  ); return NONE;}
     if (strcmp(command, "push" ) == 0) {fprintf(programCodeInfo->output_file, "%d ", _push ); return NONE;}

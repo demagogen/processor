@@ -19,15 +19,14 @@ enum ASM_ERROR
 enum PROCESSOR_COMMANDS
 {
     _error = -1,
-    _start =  0,
-    _hlt   =  1,
-    _out   =  2,
-    _push  =  3,
-    _pop   =  4,
-    _add   =  5,
-    _sub   =  6,
-    _mult  =  7,
-    _div   =  8
+    _hlt   =  0,
+    _out   =  1,
+    _push  =  2,
+    _pop   =  3,
+    _add   =  4,
+    _sub   =  5,
+    _mult  =  6,
+    _div   =  7
 };
 
 struct PROGRAM_CODE
